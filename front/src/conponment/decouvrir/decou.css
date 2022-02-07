@@ -1,0 +1,19 @@
+
+
+section{
+
+    height: 800px;
+}
+.div{
+    background-color: white;
+    height: 100px;
+}
+.decouv h2{
+        font-family: 'Segoe UI';
+        font-size: 20px;
+        display: block;
+        text-align: center;
+}
+.decouv p{
+    text-align: center;
+}

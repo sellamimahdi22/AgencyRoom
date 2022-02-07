@@ -1,0 +1,4 @@
+{
+    "db":"mongodb+srv://api:1234567A@cluster0.spc8e.mongodb.net/projet?retryWrites=true&w=majority",
+    "secret":"fff"
+}

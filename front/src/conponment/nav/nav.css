@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+.nav {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #C5E1E8;
+  height: 25vh;
+  align-items: center;
+  font-family: Orelega One;
+position: relative;
+}
+.nav > span {
+  margin-left: 10%;
+  font-size: 50px;
+  font-family: Orelega One;
+}
+
+#logo {
+  color: black;
+}
+
+.links {
+  font-size: large;
+  width: 60%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+  border-bottom: 3px solid white;
+}

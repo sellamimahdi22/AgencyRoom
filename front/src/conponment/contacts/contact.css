@@ -1,0 +1,20 @@
+.contact {
+    background-image:url(istockphoto-1151367251-612x612.jpg);
+}
+ section{
+
+    height: 800px;
+}
+.div1{
+background-color: white;
+height: 100px;
+}
+.contact h2{
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+.contact p{
+    text-align: center;
+}
