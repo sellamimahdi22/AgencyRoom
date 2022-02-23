@@ -1,0 +1,156 @@
+
+.side-nav{
+    width: 100%;
+    height: 25vh;
+    justify-content: space-between;
+
+    background-color: #03045E;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+
+
+}
+.logo{
+    display: block;
+    margin-bottom: 130px;
+    margin-top: 100px;
+    width: 200px;
+margin-left: 50px;
+color: #fff;
+font-size: 40px;
+
+}
+
+.nav-links{
+    list-style: none;
+    position: relative;
+}
+.nav-links li{
+    padding: 10px 0 ;
+}
+.nav-links li a{
+    color:#fff;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items:center ;
+}
+.icone{
+    font-size:22px ;
+    margin-right:20px ;
+}
+.active{
+background-color: #fff;
+width: 100%;
+height: 47px;
+position: absolute;
+left: 0;
+top: 2.6%;
+z-index: -1;
+border-radius: 6px;
+box-shadow: 0 5px 10px rgba(255,255,255, 0.4);
+display: none;
+transition: top 0.5s;
+}
+.nav-links li:hover a{
+color:03045E ;
+ transition: 0.3q;
+}
+.nav-links li:hover ~.active{
+    display: block;
+
+}
+.nav-links li:nth-child(1):hover ~.active{
+    top: 8%;
+}
+.nav-links li:nth-child(2):hover ~.active{
+    top: 55%;
+}
+/* .nav-links li:nth-child(3):hover ~.active{
+    top: 53%;
+}
+.nav-links li:nth-child(4):hover ~.active{
+    top: 78%;
+}  */
+.Myprofil{
+    width: 100%;
+    height: 200px;
+padding-top: 15px;    /* padding-left: 280px; */
+    /* padding-right: 50%; */
+    background-color: #00B4D8; 
+    text-align:center; 
+    display:table;
+
+}
+.Myprofil h2{
+    color: white;
+    /* text-align: center; */
+    display:table-cell;
+     vertical-align:middle;
+     transform: rotate(270deg);
+
+}
+.table {
+    width: 90%;
+    /* display: flex; */
+    height: 250px;
+/* align-items: center;  */
+ border:1.5px solid   white;
+
+   
+}
+.table td {
+    vertical-align: top;
+    color: white;
+    background-color: transparent;
+    font-size: 22px;
+text-align: left;  
+bottom:50px;}
+ 
+.logout{
+    font-size: 40px;
+    /* color: white; */
+}
+.logout :hover{
+    color: white;
+}
+.log{
+    font-size: large;
+  width: 100%;
+  margin-left: 75%;
+}
+.reservation{
+    width: 100%;
+    height: 200px;
+padding-top: 15px;    /* padding-left: 280px; */
+    /* padding-right: 50%; */
+    background-color: #90E0EF; 
+    text-align:center; 
+    display:table;
+}
+.table2 {
+    width: 90%;
+    /* display: flex; */
+    height: 250px;
+/* align-items: center;  */
+ border:1.5px solid   white;
+
+   
+}
+.table2 td {
+    vertical-align: top;
+    color: white;
+    background-color: transparent;
+    font-size: 22px;
+text-align: left;  
+bottom:50px;}
+.reservation h2{
+    color: white;
+    /* text-align: center; */
+    display:table-cell;
+     vertical-align:middle;
+     transform: rotate(270deg);
+
+}

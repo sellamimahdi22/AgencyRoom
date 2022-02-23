@@ -7,11 +7,7 @@ const userschema = new Schema({
     password:String,
     phone: String,
     country: String,
-    userRole:{
-        type:String,
-        default: 'User',
-        roles:['User','Admin'],
-    },
+    isAdmin : {type: Boolean , require , default: false},
     
 
 })

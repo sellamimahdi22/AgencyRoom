@@ -1,21 +1,78 @@
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import {  Carousel, Modal } from 'react-bootstrap';
+import React, { useState } from 'react';
+
+import './chambrecard.css'
+import { Link } from 'react-router-dom';
+
 
 const Chambrecard = ({chambre}) => {
-  const dispatch = useDispatch()
+  //card//
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+//card//
 
   return <div>
-      <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>{chambre.title}</Card.Title>
-    <Card.Title>{chambre.description}</Card.Title>
-    <Card.Title>{chambre.type}</Card.Title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div  class="rooms-cards-wrapper">
+            <div onClick={handleShow}class="room-card">
+            <div className='back'> 
+                    <h4 class="room-card-heading">{chambre.title}</h4>
+              </div>
+                <img src={chambre.imageUrl[0]} class="room-img"/>
+                <div class="room-card-content">
+             
+                    
+                    {/* <p class="room-price">{chambre.price}DT</p> */}
+               
+                </div>
+            </div>
     
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
+</div>
+<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton >
+          <h3 className='title' >{chambre.title}</h3>
+          </Modal.Header>
+  <Modal.Body>
+
+{/* <Carousel className='caro' >
+            {chambre.imageUrl.map((url) => {
+              return (
+                <Carousel.Item>
+                  <img
+                    src={url}
+                    style={{ height: "250px" }}
+                  />
+                </Carousel.Item>
+              );
+            })}
+          </Carousel> */}
+          <p class="room-card-paragraph">{chambre.description}</p>
+          </Modal.Body>
+        <Modal.Footer>
+           <p class="room-price">Prix de nuit :{chambre.price}DT</p>
+        <Link to="/reserver"className="bookbutton">RÉSERVER</Link>     
+        </Modal.Footer>
+      </Modal>
+
+
+
+
+
   </div>;
 };
 

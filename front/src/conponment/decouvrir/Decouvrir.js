@@ -1,19 +1,90 @@
 import React from 'react';
 import './decou.css'
-const Decouvrir = () => {
-  return <div className='decouv'>
-<section>
-<div className='div'>
+import { BsWifi } from "react-icons/bs";
+import { FaParking ,FaSwimmingPool} from "react-icons/fa";
+import { MdOutlineWaves} from "react-icons/md";
 
-<h2> NOTRE HOTEL</h2>
-<p> 
-Paragraphe. Cliquez ici pour ajouter votre propre texte. Cliquez sur "Modifier Texte" ou double-cliquez 
-ici pour ajouter votre contenu et personnaliser les polices. Relatez ici votre parcours et présentez votre activité à vos visiteurs.
-</p>
+const Decouvrir = () => {
+  return <div >
+<section className='section13' >
+<div className='box'> 
+<h1>SERVICES</h1>
 </div>
 </section>
-<h2>  SERVICES </h2>
+<section className='section2'>
 
+<div className='services'>
+  <div className='boxes'>
+<FaParking className='icones'/>
+<h1>Parking</h1>
+
+  </div>
+</div>
+{/* <-----> */}
+<div className='services'>
+  <div className='boxes'>
+<BsWifi className='icones'/>
+<h1>wifi</h1>
+
+  </div>
+</div>
+{/* <-----> */}
+
+<div className='services'>
+  <div className='boxes'>
+<MdOutlineWaves className='icones'/>
+<h1>Plage privée</h1>
+  </div>
+</div>
+
+<div className='services'>
+  <div className='boxes'>
+<FaSwimmingPool className='icones'/>
+<h1>Piscine</h1>
+  </div>
+</div>
+
+</section>
+<section className='section3'>
+
+<div className='boxes2'>
+  <div className='bg'>
+<div className='description'>
+<h2> Bar lounge</h2> 
+
+</div>
+  </div>
+</div>
+
+
+<div className='boxes2'>
+  <div className='bg1'>
+<div className='description'>
+<h2> Restaurants</h2> 
+
+</div>
+  </div>
+</div>
+
+
+<div className='boxes2'>
+  <div className='bg2'>
+<div className='description'>
+<h2> Evenements </h2> 
+
+
+</div>
+  </div>
+</div>
+</section>
+{/* online booking 
+Events 
+wifi
+parking 
+pisine
+bar 
+airport transport 
+dining area*/}
 
   </div>;
 };

@@ -1,23 +1,40 @@
-.recherche{
-    box-sizing: content-box;
-    width: 30%;
-    border: solid white 2px;
-    padding: 5px;
-    display: inline;
-    
+.slider{
+margin-top: 80px;
+display:inline-block;
+align-items: center;
+/* width: 10%; */
+height: 90px;
+padding-left: 45%;
 }
-.aceuil{
-    background-image: url("http://flashmode.tn/wp-content/uploads/2016/11/Dar-El-Bhar-Maison-dh%C3%B4tes-a-Hammamet-1024x681.jpg");
-    height: 900px;
-    /* background-attachment:fixed; */
-    background-repeat:no-repeat;
-    background-position:50% 50%;
-    text-align: center;
+.btn1 {
+   
+    color: #FFF;
+    border: 2px solid white;
+    border-radius: 0px;
+    
+    padding: 10px 26px;
+    background-color: transparent;
+   
+    
+text-decoration: none;
 
 }
-button{
-    color: black;
-    background-color: #C5E1E8;
-    width: 190px;
-    border: none;
+.btn1:hover {
+    box-shadow: inset 0 100px 0 0 #C5E1E8;
+  }
+.accueil{
+    background-image: url("https://images.unsplash.com/photo-1444201983204-c43cbd584d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWwlMjByZWNlcHRvbnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
+width: 100%;
+height: 750px;
+padding-top: 10%;
 }
+.accueil h2{
+    color: #FFF;
+    text-align: center;
+padding-top: 5%;
+} 
+

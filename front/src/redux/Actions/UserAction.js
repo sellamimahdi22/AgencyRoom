@@ -4,7 +4,7 @@ import { LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, REGISTER, REGISTER_FAIL, REGISTER_SUC
 
 export const registerUSer =(newuser)=> async(dispatch)=>{
     dispatch({
-        type:REGISTER
+        type:REGISTER,
     })
    try {
     const {data}=await axios.post('/user/register',newuser)
@@ -25,11 +25,23 @@ export const loginUser=(user)=>async(dispatch)=>{
         type:LOGIN
     })
     try {
-        const {data}= await axios.post('/user/login',user);
-        localStorage.setItem('token',data.token)
+        const res= await axios.post('/user/login',user);
+        localStorage.setItem('token',res.data.token)
+        const {firstname,Lastname,Email,phone,country,isAdmin}=res.data
+        const currentUser = {
+            
+            firstname,
+            Lastname,
+            Email,
+            phone,
+            country,
+            isAdmin
+        }
+        localStorage.setItem('currentUser',JSON.stringify(currentUser))
+        console.log(res)
      dispatch({
          type:LOGIN_SUCCESS,
-         payload:data,
+         payload:res.data,
      })
     } catch (error) {
         dispatch({

@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const Reserver = () => {
-  return <div>
+  return (
+    <div>
+      
+    </div>
+  )
+}
 
-    <p> ekfkrgjlmetgn</p>
-  </div>;
-};
-
-export default Reserver;
+export default Reserver

@@ -1,5 +1,15 @@
 const Chamb = require("../models/Chamb");
 
+// exports.bookchambre = async(req,res)=>{
+//     const userId = req.params.userId
+//     const roomId = req.params.roomId
+//     try {
+//         const room = await Chamb.findById(roomId)
+//     } catch (error) {
+//         res.status(500).json({errors:error.message})
+//     }
+// }
+
 
 exports.getchambre=async(req,res)=>{
     try {
@@ -18,10 +28,10 @@ exports.getonechambre=async(req,res)=>{
       }
 };
 exports.addchambre=async(req,res)=>{
-    const {price,title,type,category,confort,description}=req.body
+    const {price,title,type,confort,description,imageUrl}=req.body
     try {
         const newchambre=  new Chamb({
-            price,title,type,category,confort,description
+            price,title,type,confort,description,imageUrl
         });
         await newchambre.save();
         res.send(newchambre)

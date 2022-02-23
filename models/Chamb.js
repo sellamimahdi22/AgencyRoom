@@ -18,23 +18,31 @@ const chamschema = new Schema({
         type: String,
         required: true,
       },
-      // imageUrl: String,
-      category: {
-        type: String,
-        required: true,
-      },
+      imageUrl: [],
       price: {
         type: Number,
         required: true,
       },
       
-      date_added: {
+      date: {
         type: Date,
         default: Date.now(),
       },
-      // dispo: {
-      //   type: String,
-      //   required: true,
-      // },
+      dispo:[],
+      booking :{
+        userId :{
+          type:String,
+          default:''
+        },
+        from_date:{
+          type:Date,
+          default:''
+        },
+        to_date:{
+          type:Date,
+          default:''
+        },
+
+      }
 })
 module.exports=mongoose.model("chambre",chamschema)

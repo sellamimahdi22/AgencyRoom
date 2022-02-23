@@ -24,50 +24,50 @@ try {
 }
 }
 
-// export const getone=()=>async(dispatch)=>{
-//     try {
-//         const res =await axios.get("/getonechambre")
-//         dispatch({
-//             type:GETONECHAMBRE,
-//             payload:res.data,
-//         })
-//     } catch (error) {
-//         alert('get one error')
-//     }
-// }
-// export const addchambre=(newchambre)=>async(dispatch)=>{
-//     try {
-//         const res =await axios.post("/add",newchambre)
-//         dispatch({
+export const getone=()=>async(dispatch)=>{
+    try {
+        const res =await axios.get("/getonechambre")
+        dispatch({
+            type:GETONECHAMBRE,
+            payload:res.data,
+        })
+    } catch (error) {
+        alert('get one error')
+    }
+}
+export const addchambre=(newchambre)=>async(dispatch)=>{
+    try {
+        const res =await axios.post("/add",newchambre)
+        dispatch({
 
-//             type: ADDCHAMBRES,
-//             payload:res.data,
-//         })
-//     } catch (error) {
-//         alert("add error")
-//     }
-// }
+            type: ADDCHAMBRES,
+            payload:res.data,
+        })
+    } catch (error) {
+        alert("add error")
+    }
+}
 
-// export const editchambre =(editedchambre)=>async(dispatch)=>{
-//     try {
-//         const res = await axios.put(`/edit/${editedchambre.id}`,editedchambre)
-//         dispatch({
-//             type:EDITCHAMBRES,
-//             payload:res.data,
-//         })
-//     } catch (error) {
-//         alert("edit error")
-//     }
-// }
+export const editchambre =(editedchambre)=>async(dispatch)=>{
+    try {
+        const res = await axios.put(`/edit/${editedchambre.id}`,editedchambre)
+        dispatch({
+            type:EDITCHAMBRES,
+            payload:res.data,
+        })
+    } catch (error) {
+        alert("edit error")
+    }
+}
 
-// export const deletechambre=(id)=>async(dispatch)=>{
-//     try {
-//         const res=await axios.delete(`/delete/${id}`)
-//         dispatch({
-//             type:DELETECHAMBRES,
-//             payload:res.data,
-//         })
-//     } catch (error) {
-//         alert("delete error")
-//     }
-// }
+export const deletechambre=(id)=>async(dispatch)=>{
+    try {
+        const res=await axios.delete(`/delete/${id}`)
+        dispatch({
+            type:DELETECHAMBRES,
+            payload:res.data,
+        })
+    } catch (error) {
+        alert("delete error")
+    }
+}

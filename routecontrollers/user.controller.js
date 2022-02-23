@@ -6,15 +6,14 @@ const secret=config.get('secret')
 
 
 exports.register=async(req,res)=>{
-    const {firstname,name,Email,password,phone,country}=req.body
+    const {firstname,Lastname,Email,password,phone,country,isAdmin}=req.body
     const exituser=await User.findOne({Email})
     if(exituser)
-return
 res.status(409).json({msg:"user exist!!"})
 try {
     const newuser= new User
         ({
-            firstname,name,Email,password,phone,country,userRole
+            firstname,Lastname,Email,password,phone,country,isAdmin
         })
         let salt =await bc.genSalt(10);
         let hash =await bc.hash(password, salt);
@@ -27,12 +26,13 @@ const payload ={
 res.send({
     token,user:{
         firstname:newuser.firstname,
-        name:newuser.name,
+        Lastname:newuser.Lastname,
         Email:newuser.Email,
         country:newuser.country,
         phone:newuser.phone,
         id:newuser._id,
-        userRole:newuser.userRole
+        isAdmin:newuser.isAdmin
+      
     }
 })
 } catch (error) {
@@ -56,12 +56,13 @@ exports.login=async(req,res)=>{
         res.send({
           token,
           id:exist._id,
-          Lastname: exist.name,
+          Lastname: exist.Lastname,
           firstname:exist.firstname,
           Email: exist.Email,
           phone: exist.phone,
           country: exist.country,
-          userRole:exist.userRole,
+          isAdmin:exist.isAdmin
+        
 
         });
       } catch (error) {

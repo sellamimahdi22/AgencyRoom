@@ -4,8 +4,9 @@ const init ={
     loading:false,
     errors:null,
     users:null,
+    token:null
 }
-const reducer=(state=init,{type,payload})=>{
+const userReducer=(state=init,{type,payload})=>{
     switch (type) {
         case REGISTER:
             case LOGIN:
@@ -26,4 +27,4 @@ const reducer=(state=init,{type,payload})=>{
             return state 
     }
 }
-export default reducer
+export default userReducer

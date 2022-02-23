@@ -1,0 +1,137 @@
+import React, { useEffect } from 'react'
+import './Profile.css'
+import {BsFillPersonXFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+import useForceUpdate from 'use-force-update';
+
+const user = JSON.parse(localStorage.getItem("currentUser"));
+const Profile = () => {
+  function logout() {
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("token");
+    window.location.href = "/accueil";
+  }
+  const forceUpdate = useForceUpdate();
+  useEffect(() => {
+    forceUpdate();
+  }, []);
+  return (
+    <div>
+
+
+   
+  
+  <div className='side-nav'>
+           <span>
+        
+          
+            <Link to="/" className="logo" >
+          Chez Soi
+        </Link>
+           </span>
+    
+           <span className='log'> 
+        <Link to="/"  onClick={logout}>
+        <BsFillPersonXFill  className='logout'/>
+        </Link>
+        </span>
+        </div>
+        
+        
+        <main className='Myprofil'>
+  
+    <h2>Profil </h2>
+ <table className='table'>
+    <tbody >
+    
+       <tr>
+         <td> Nom</td>
+         <td width="1em"></td>
+         <td> {user.firstname}</td>
+       </tr> 
+       <tr>
+         <td> Prenom</td>
+         <td width="1em"></td>
+
+         <td> {user.Lastname}</td>
+       </tr>
+       <tr>
+         <td> Email</td>
+         <td width="1em"></td>
+
+         <td> {user.Email}</td>
+       </tr>
+       <tr>
+         <td> Numero telephone</td>
+         <td width="1em"></td>
+
+         <td> {user.phone}</td>
+       </tr>
+       <tr>
+         <td> Pays</td>
+         <td width="1em"></td>
+
+         <td> {user.country}</td>
+       </tr>
+       <tr>
+         <td> Role</td>
+         <td width="1em"></td>
+
+         <td> {user.isAdmin}</td>
+       </tr>
+    </tbody>
+ </table>
+
+</main>
+<div className='reservation'>
+<h2>Reservations </h2>
+
+ <table className='table2' >
+    <tbody >
+       <tr>
+         <td> Nom</td>
+         <td width="1em"></td>
+         <td> </td>
+       </tr> 
+       <tr>
+         <td> Prenom</td>
+         <td width="1em"></td>
+
+         <td> </td>
+       </tr>
+       <tr>
+         <td> Email</td>
+         <td width="1em"></td>
+
+         <td> </td>
+       </tr>
+       <tr>
+         <td> Numero telephone</td>
+         <td width="1em"></td>
+
+         <td> </td>
+       </tr>
+       <tr>
+         <td> Pays</td>
+         <td width="1em"></td>
+
+         <td> </td>
+       </tr>
+    </tbody>
+ </table>
+</div>
+                 
+                 </div>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 )
+                }
+                
+                export default Profile
