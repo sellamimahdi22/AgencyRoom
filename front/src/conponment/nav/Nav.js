@@ -20,7 +20,7 @@ const Nav = () => {
 
   return (
     <div>
-
+   
     <div className="nav">
       <span>
         <Link to="/" className="link" id="logo">
@@ -44,28 +44,27 @@ const Nav = () => {
         <Link to="/reserver" className="linke">
           RÉSERVER
         </Link>
-            </div>
-       
     {localStorage.getItem("currentUser") ? (
-          <div class="dropdown">
-            <button class="dropbtn">
-              {" "}
-              <BsFillPersonFill />
-              <i class="fa fa-user" aria-hidden="true"></i>{" "}
-              {JSON.parse(localStorage.getItem("currentUser")).firstname}
-            </button>
-            <div class="dropdown-content">
-              <Link to="/Profile">Profil</Link>
-              <a href="/accueil" onClick={logout}>
-                Déconnexion
-              </a>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  {" "}
+                  <BsFillPersonFill />
+                  {JSON.parse(localStorage.getItem("currentUser")).firstname}
+                  <i class="fa fa-user" aria-hidden="true"></i>{" "}
+                </button>
+                <div class="dropdown-content">
+                  <Link to="/Profile">Profil</Link>
+                  <a href="/" onClick={logout}>
+                    Déconnexion
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <Link to="/SeConnecter" className="linke">
+               CONNEXION
+              </Link>
+            )} 
             </div>
-          </div>
-        ) : (
-          <Link to="/SeConnecter" className="link1">
-           CONNEXION
-          </Link>
-        )} 
     </div>
         </div>
   );

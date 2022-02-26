@@ -7,8 +7,11 @@ const userschema = new Schema({
     password:String,
     phone: String,
     country: String,
-    isAdmin : {type: Boolean , require , default: false},
-    
+    userRole: {
+        type: String,
+        default: 'User',
+        roles: ['User', 'Admin'],
+      },    
 
 })
 module.exports=mongoose.model("user",userschema)

@@ -29,7 +29,7 @@
 .services{
 display: inline-block;
 padding: 12px;
-
+padding-left: 3%;
 }
 .boxes{
    width: 300px;

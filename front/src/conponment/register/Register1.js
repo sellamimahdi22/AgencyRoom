@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { registerUSer } from '../../redux/Actions/UserAction';
 import './loigin.css'
 
@@ -89,7 +89,7 @@ const Register = () => {
       </div>
       <div class="group">      
     <input
-    type="text"
+    type="tel"
     value={phone}
     onChange={(e) => setPhone(e.target.value)}
         required /> 
@@ -421,13 +421,14 @@ const Register = () => {
                     <option value="Zimbabwe">Zimbabwe</option>
                   </select>
     </div>
-    <div className="btn"> 
+    {/* <div className="btn">  */}
 
-    <button type="submit" onClick={handleinsc}>
+   
+   <button className='button10' type="submit" onClick={handleinsc}>
 					Inscrire
 					
 				</button>
-    </div>
+    {/* </div> */}
   </form>
 </div>
     

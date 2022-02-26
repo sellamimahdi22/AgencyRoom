@@ -18,7 +18,7 @@ const Login = () => {
     <div className='bga'>
       {
   loading? <h1>loading...</h1> 
-  :users? <Redirect to="/accueil"> </Redirect>:
+  :users? <Redirect to="/"> </Redirect>:
   <section className="connecter">
     <>
     <div className="login">
@@ -46,21 +46,18 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required /> 
-      <span class="highlight"></span>
-      <span class="bar"></span>
+      
       <label>Mot de passe</label>
     </div>
-    <div className="btn"> 
 
-    <button  type="submit"
+    <button className='button0' type="submit"
     onClick={handleident}>
 					Se Connecter
 					
 				</button>
-    </div>
     
 
-        <Link to="/register" className='btn'>Inscrire</Link>
+        <Link to="/register" className='button10'>Inscrire</Link>
   
   </form>
 </div>

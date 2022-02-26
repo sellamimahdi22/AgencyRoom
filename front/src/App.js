@@ -13,11 +13,13 @@ import { useEffect, useState } from 'react';
 import useForceUpdate from 'use-force-update';
 import Admin from './conponment/Adminsc/Admin';
 import Accueil from './conponment/Accueil/Accueil';
+import Addchambre from './conponment/Adminsc/Addchambre';
+import Editchamb from './conponment/Adminsc/Editchamb';
 // import useForceUpdate from 'use-force-update';
 
 function App() {
   const [url, setUrl] = useState(window.location.pathname)
-  console.log(url)
+  // console.log(url)
   const [fileName, setfileName] = useState('')
   
 
@@ -53,6 +55,8 @@ function App() {
         <Route exact path="/Profile" component={Profile} />
         <Route exact path="/Admin" component={Admin} />
         <Route exact path="/register" component={Register1} />
+        <Route exact path="/add" component={Addchambre} />
+        <Route exact path="/:id" component={Editchamb} />
       </Switch>
       </BrowserRouter>
     </div>

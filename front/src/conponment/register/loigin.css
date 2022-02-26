@@ -42,6 +42,7 @@ display: block;
     width: 350px;
     height: 350px;
     display: flex;
+    padding-top: 5%;
     justify-content: center;
 }
 input{
@@ -117,26 +118,12 @@ input:focus ~ .highlight {
   -moz-animation:inputHighlighter 0.3s ease;
   animation:inputHighlighter 0.3s ease;
 }
-button{
-	width: 60%;
-	height: 40px;
-	/* margin: 10px auto; */
-	/* justify-content: center; */
-	display: block;
-	color: white;
-	background: #00B4D8;
-	font-weight: bold;
-	/* margin-top: 20px; */
-	/* outline: none; */
-	border: none;
-	border-radius: 5px;
-	transition: .2s ease-in;
-	cursor: pointer;
-}
-button:hover{
+
+.button0:hover{
 	background: #CAF0F8;
     width: 60%;
 	height: 40px;
+  color: black;
 }
 .btn{
     /* padding-left: 50%; */
@@ -164,7 +151,9 @@ color: #00B4D8;
   border: 1px  solid #999;
   box-shadow: 5px 10px #888888;
   float: left;
-display: block;    
+display: block; 
+
+padding-left: 2%;
 }
 .bga{
   background-image: url("https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
@@ -172,5 +161,46 @@ background-repeat: no-repeat;
 background-position: center;
 height: 100%;
 background-size: cover;
+}
+.button0{
+	width: 50%;
+	height: 40px;
+	margin: 10px auto;
+	/* justify-content: center; */
+	display: block;
+	color: white;
+	background: #00B4D8;
+	font-weight: bold;
+	/* margin-top: 20px; */
+	/* outline: none; */
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+  padding-left:5% ;
+}
+.button10{
+	width: 50%;
+	height: 40px;
+	margin: 9px auto;
+	justify-content: center;
+	display: flex;
+	color: white;
+	background: #00B4D8;
+	font-weight: bold;
+	margin-top: 20px;
+	padding-top: 2%; 
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+  /* text-align: center; */
+  text-decoration: none;
+}
+.button10:hover{
+	background: #CAF0F8;
+    width: 60%;
+	height: 40px;
+  color: black;
 }
 

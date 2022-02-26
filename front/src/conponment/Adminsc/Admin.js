@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import '../register/Profile.css'
-import {BsFillPersonXFill,BsFillPersonFill, BsFillChatRightDotsFill,BsFillGearFill,BsFillCalendarFill } from "react-icons/bs";
+import {BsFillPersonXFill} from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getchambres } from '../../redux/Actions/chambAction';
@@ -37,18 +37,7 @@ const Admin = () => {
         </Link>
         </span>
         </div>
-{/* <header> */}
 
-                {/* <ul className='nav-links'> */}
-                    {/* <li> <a href='#Profil'><BsFillPersonFill className='icone'/><p> Profil</p> </a> </li> */}
-                    {/* <li> <a href='#Message'><BsFillChatRightDotsFill className='icone'/><p> Message</p> </a> </li> */}
-                    {/* <li> <a href='#Reservations'><BsFillCalendarFill className='icone'/><p> Reservations</p> </a> </li>
-                    <li> <a href='#Parameteres'><BsFillGearFill className='icone'/><p> Parameteres</p> </a> </li>
-                    <div className='active'> 
-
-                   </div>
-                </ul> */}
-{/* </header> */}
 
 <main className='Myprofil'>
   
@@ -85,46 +74,36 @@ const Admin = () => {
 
          <td> {user.country}</td>
        </tr>
+       <tr>
+         <td> admin</td>
+         <td width="1em"></td>
+
+         {/* <td>{user.isAdmin ? "Yes" : "No"}</td> */}
+       </tr>
     </tbody>
  </table>
 
 </main>
 <div className='reservation'>
-<h2>Reservations </h2>
+<h2>Chambres </h2>
+<table className='table'>
 
- <table className='table2' >
-    <tbody >
-       <tr>
-         <td> Nom</td>
-         <td width="1em"></td>
-         <td> </td>
-       </tr> 
-       <tr>
-         <td> Prenom</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-       <tr>
-         <td> Email</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-       <tr>
-         <td> Numero telephone</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-       <tr>
-         <td> Pays</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-    </tbody>
- </table>
+{chambres.map(el=>
+   <tr>
+   <th> {el.title} </th>
+   <td> <button> edit </button></td>
+   <td> <button> delete </button></td>
+   </tr>
+  )}
+  </table>
+ 
+</div>
+<div className='add'>
+  <Link to="/add">
+  <button>
+    Add room
+  </button>
+  </Link>
 </div>
                 </div>
                

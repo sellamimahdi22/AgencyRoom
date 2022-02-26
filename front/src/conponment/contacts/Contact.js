@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './contact.css'
+// import{ user_DDdwAx0hChInXGL2wUr41 } from '@emailjs/browser';
+import emailjs from "emailjs-com"
 const Contact = () => {
+  
+
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('gmail', 'chezsoiID',  'user_DDdwAx0hChInXGL2wUr41')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      alert("message envoyee avec succes");
+  };
   return <div>
 
     <section className='section12'>
@@ -13,18 +29,17 @@ const Contact = () => {
     <div className="box1">
 <h6> Écrivez-nous
 </h6>
-<div className="forms1">
+<div className="forms12">
  
-<form >
+<form ref={form} >
   <div >
-    <input type="text" placeholder="Name"/>
-    <input type="email"  placeholder="Email address"/>
-    <input type="text"  placeholder="Subject"/>
+    <input type="text" placeholder="Nom et prenom" name='Nom et prenom'/>
+    <input type="email"  placeholder="Email " name='Email'/>
   </div>
   <div >
     <textarea name="message" type="text"  placeholder="Message"></textarea>
   </div>  
-  <input type="submit" value="Envoyer" id="input-submit"/>
+  <input  type="submit" onSubmit={sendEmail} value="Envoyer" id="input-submit"/>
 </form>
 </div>
   </div>

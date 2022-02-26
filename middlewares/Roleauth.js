@@ -1,9 +1,6 @@
-const AuthRole = (role)=>{
-    return (req,res,next)=>{
-        if(req.user.userRole!==role){
-            res.status(401).json({errors: error.message});
-        }
-    }
-    next()
-}
-module.exports=AuthRole;
+const roleCheck = (role) => (req, res, next) =>
+  !role.includes(req.user.userRole)
+    ? res.status(401).json('Forbidden')
+    : next();
+
+module.exports = roleCheck;

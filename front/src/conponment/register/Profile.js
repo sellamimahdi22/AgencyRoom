@@ -1,23 +1,33 @@
 import React, { useEffect } from 'react'
 import './Profile.css'
 import {BsFillPersonXFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useForceUpdate from 'use-force-update';
+import { getchambres } from '../../redux/Actions/chambAction';
+import { useDispatch, useSelector } from 'react-redux';
+import Editchamb from '../Adminsc/Editchamb';
+import Tables from './Tables';
 
 const user = JSON.parse(localStorage.getItem("currentUser"));
+
 const Profile = () => {
   function logout() {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("token");
-    window.location.href = "/accueil";
+    window.location.href = "/";
   }
   const forceUpdate = useForceUpdate();
   useEffect(() => {
     forceUpdate();
   }, []);
-  return (
+  const { loading,chambres} = useSelector((state) => state.chambresreducer);
+  const dispatch =useDispatch()
+  useEffect(() => {
+    dispatch(getchambres());
+    
+  }, []);
+  return (  
     <div>
-
 
    
   
@@ -77,48 +87,44 @@ const Profile = () => {
          <td> Role</td>
          <td width="1em"></td>
 
-         <td> {user.isAdmin}</td>
+         <td> {user.isAdmin ? "Yes" : "No"}</td>
        </tr>
     </tbody>
  </table>
 
 </main>
 <div className='reservation'>
-<h2>Reservations </h2>
+<h2>Chambres </h2>
 
- <table className='table2' >
-    <tbody >
-       <tr>
-         <td> Nom</td>
-         <td width="1em"></td>
-         <td> </td>
-       </tr> 
-       <tr>
-         <td> Prenom</td>
-         <td width="1em"></td>
+{/* {
+      
+      chambres.map(el=>
+       <Tables chambre={el}/>)
+ } */}
+{/* <table className='table'> */}
 
-         <td> </td>
-       </tr>
-       <tr>
-         <td> Email</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-       <tr>
-         <td> Numero telephone</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-       <tr>
-         <td> Pays</td>
-         <td width="1em"></td>
-
-         <td> </td>
-       </tr>
-    </tbody>
- </table>
+{/* {chambres.map(el=>
+  <table>
+  <tr>
+  <th> {el.title} </th>
+  <td>
+  <Link to={`/${chambres._id}`}>
+  edit
+  </Link>
+  </td>
+  <td> <button> delete </button></td>
+  </tr>
+  </table>
+  )} */}
+  {/* </table> */}
+ 
+</div>
+<div className='add'>
+  <Link to="/add">
+  <button>
+    Add room
+  </button>
+  </Link>
 </div>
                  
                  </div>

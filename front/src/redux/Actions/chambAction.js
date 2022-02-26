@@ -11,7 +11,7 @@ export const getchambres=()=>async(dispatch)=>{
     })
 try {
     const {data} =await axios.get("/chambres/get-chambre")
-    console.log(data);
+    // console.log(data);
     dispatch({
         type:GETCHAMBRES_SUCCESS,
         payload:data,
@@ -37,26 +37,28 @@ export const getone=()=>async(dispatch)=>{
 }
 export const addchambre=(newchambre)=>async(dispatch)=>{
     try {
-        const res =await axios.post("/add",newchambre)
+        const res =await axios.post("/chambres/add-chambre",newchambre)
         dispatch({
 
             type: ADDCHAMBRES,
             payload:res.data,
         })
     } catch (error) {
-        alert("add error")
-    }
-}
+        // alert("add error")
+  console.log(error.response)      
+        
+}}
 
 export const editchambre =(editedchambre)=>async(dispatch)=>{
     try {
-        const res = await axios.put(`/edit/${editedchambre.id}`,editedchambre)
+        const res = await axios.put(`/chambres/edit-chambre/:id`,editedchambre)
         dispatch({
             type:EDITCHAMBRES,
             payload:res.data,
         })
     } catch (error) {
-        alert("edit error")
+        // alert("edit error")
+        // console.log(error.response.data)
     }
 }
 

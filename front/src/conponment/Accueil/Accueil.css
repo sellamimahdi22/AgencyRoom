@@ -1,3 +1,5 @@
+
+@import url('https://fonts.google.com/specimen/Gilda+Display?preview.size=15&query=Gilda+Display#standard-styles');
 .slider{
 margin-top: 80px;
 display:inline-block;
@@ -36,5 +38,6 @@ padding-top: 10%;
     color: #FFF;
     text-align: center;
 padding-top: 5%;
+font-family:Gilda Display ;
 } 
 

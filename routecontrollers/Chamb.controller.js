@@ -36,8 +36,8 @@ exports.addchambre=async(req,res)=>{
         await newchambre.save();
         res.send(newchambre)
     } catch (error) {
-        // res.status(500).json({errors: error.message});
-        console.log(error);
+        res.status(500).json({errors: error.message});
+        // console.log(error);
 
     }
 }

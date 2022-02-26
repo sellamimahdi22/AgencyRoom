@@ -14,20 +14,6 @@ const Chambrecard = ({chambre}) => {
 
   return <div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div  class="rooms-cards-wrapper">
             <div onClick={handleShow}class="room-card">
             <div className='back'> 
@@ -49,7 +35,7 @@ const Chambrecard = ({chambre}) => {
           </Modal.Header>
   <Modal.Body>
 
-{/* <Carousel className='caro' >
+<Carousel className='caro' >
             {chambre.imageUrl.map((url) => {
               return (
                 <Carousel.Item>
@@ -60,7 +46,7 @@ const Chambrecard = ({chambre}) => {
                 </Carousel.Item>
               );
             })}
-          </Carousel> */}
+          </Carousel>
           <p class="room-card-paragraph">{chambre.description}</p>
           </Modal.Body>
         <Modal.Footer>
