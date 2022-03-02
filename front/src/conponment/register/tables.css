@@ -1,0 +1,53 @@
+.editbutton{
+	width: 100%;
+	height: 40px;
+	margin: 9px auto;
+	justify-content: center;
+	display: flex;
+	color: white;
+	
+	background: #00B4D8;
+	font-weight: bold;
+	/* margin-top: 20px; */
+	/* padding-top: 2%;  */
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+  /* text-align: center; */
+  text-decoration: none;
+  padding-left: 10%;
+}
+.editbutton:hover{
+	background: #CAF0F8;
+    width: 100%;
+	height: 40px;
+  color: black;
+}
+.table1 {
+    width: 40%;
+    display: flex;
+    height: 50px;
+align-items: center; 
+ border:1.5px solid   white;
+
+   
+}
+.table1 td {
+    /* vertical-align: top; */
+    color: white;
+    height: 10px;
+    background-color: transparent;
+    font-size: 22px;
+text-align: left;  
+padding-left: 30px;
+
+/* bottom:50px; */
+}
+.table1 th {
+    vertical-align: top;
+    color: white;
+    background-color: transparent;
+    font-size: 22px;
+text-align: left;  
+bottom:50px;}

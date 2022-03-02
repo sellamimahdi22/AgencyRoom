@@ -21,13 +21,7 @@ const Decouvrir = () => {
   </div>
 </div>
 {/* <-----> */}
-<div className='services'>
-  <div className='boxes'>
-<BsWifi className='icones'/>
-<h1>wifi</h1>
 
-  </div>
-</div>
 {/* <-----> */}
 
 <div className='services'>

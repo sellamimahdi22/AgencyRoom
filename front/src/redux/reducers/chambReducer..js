@@ -32,7 +32,7 @@ const chambresreducer=(state=init,{type,payload})=>{
             }
         case DELETECHAMBRES:
             return{
-                ...state,chambres:state.chambres.filter(el=>el.id!==payload)
+                ...state,chambres:state.chambres.filter(el=>el._id!==payload)
             }    
         case EDITCHAMBRES:    
         return{

@@ -1,22 +1,28 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { editchambre } from '../../redux/Actions/chambAction';
-const Editchamb = () => {
+const Editchamb = ({}) => {
   const { loading,chambres} = useSelector((state) => state.chambresreducer);
-    // console.log(chambres);
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    console.log(chambres);
+    const location = useLocation()
+    const path = location.pathname.slice(6)
+    console.log(path)
+    const chambre = chambres.find(el=>el._id===path)
+    console.log(chambre)
  const dispatch =useDispatch()
- const [title, setTitle] = useState(chambres.title)
-const [type, setType] = useState('')
-const [description, setDescription] = useState('')
-const [confort, setConfort] = useState('')
-const [imageUrl, setImageUrl] = useState([])
-const [price, setPrice] = useState('')
-const [dispo, setDispo] = useState('');
+ const [title, setTitle] = useState(chambre.title)
+const [type, setType] = useState(chambre.type)
+const [description, setDescription] = useState(chambre.description)
+const [confort, setConfort] = useState(chambre.confort)
+const [imageUrl, setImageUrl] = useState(chambre.imageUrl.map(el=>el))
+const [price, setPrice] = useState(chambre.price)
+const [dispo, setDispo] = useState(chambre.dispo);
 
 const handleEdit = (e) => {
   e.preventDefault();
   const editedchambre = {
+    _id:chambre._id,
     title,
     description,
     type,
@@ -125,9 +131,9 @@ const handleEdit = (e) => {
 
             </div>
             
+     <button className='Addbtn' onClick={handleEdit}> edit </button>
             </form>
-    </div>
-    <button className='Addbtn' onClick={handleEdit}> edit </button>
+    </div> 
     </div>
   )
 }

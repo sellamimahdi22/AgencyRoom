@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react'
+import { BsFillPlusCircleFill } from 'react-icons/bs';
 import './Profile.css'
 import {BsFillPersonXFill } from "react-icons/bs";
 import { Link, useParams } from 'react-router-dom';
 import useForceUpdate from 'use-force-update';
 import { getchambres } from '../../redux/Actions/chambAction';
 import { useDispatch, useSelector } from 'react-redux';
-import Editchamb from '../Adminsc/Editchamb';
+import Editchamb from '../chambres/Editchamb';
 import Tables from './Tables';
 
 const user = JSON.parse(localStorage.getItem("currentUser"));
-
+console.log(user)
 const Profile = () => {
   function logout() {
     localStorage.removeItem("currentUser");
@@ -83,49 +84,36 @@ const Profile = () => {
 
          <td> {user.country}</td>
        </tr>
-       <tr>
-         <td> Role</td>
-         <td width="1em"></td>
-
-         <td> {user.isAdmin ? "Yes" : "No"}</td>
-       </tr>
+       
+       
     </tbody>
  </table>
 
 </main>
+{user.isAdmin ? 
 <div className='reservation'>
 <h2>Chambres </h2>
 
-{/* {
-      
+{
+      chambres && chambres.length>0 ?
       chambres.map(el=>
-       <Tables chambre={el}/>)
- } */}
-{/* <table className='table'> */}
+        <Tables chambre={el}/>)
+        :null  }
 
-{/* {chambres.map(el=>
-  <table>
-  <tr>
-  <th> {el.title} </th>
-  <td>
-  <Link to={`/${chambres._id}`}>
-  edit
-  </Link>
-  </td>
-  <td> <button> delete </button></td>
-  </tr>
-  </table>
-  )} */}
-  {/* </table> */}
  
-</div>
-<div className='add'>
-  <Link to="/add">
-  <button>
-    Add room
-  </button>
+
+  <Link to="/add" className='link22'>
+  <button className='Addbtn2'>
+  <BsFillPlusCircleFill/>
+Ajouter chambres  </button>
   </Link>
+
 </div>
+:
+<div>
+  
+</div>
+}
                  
                  </div>
                  

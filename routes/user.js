@@ -6,5 +6,5 @@ const router=express.Router();
 
 router.post('/register',register,registerRules,validator)
 router.post('/login',login)
-router.get('/auth',verifyAuth,auth)
+router.get('/auth',auth)
 module.exports= router;

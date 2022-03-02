@@ -86,16 +86,7 @@ const Admin = () => {
 </main>
 <div className='reservation'>
 <h2>Chambres </h2>
-<table className='table'>
 
-{chambres.map(el=>
-   <tr>
-   <th> {el.title} </th>
-   <td> <button> edit </button></td>
-   <td> <button> delete </button></td>
-   </tr>
-  )}
-  </table>
  
 </div>
 <div className='add'>

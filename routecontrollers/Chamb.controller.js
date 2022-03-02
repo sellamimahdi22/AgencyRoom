@@ -41,7 +41,7 @@ exports.addchambre=async(req,res)=>{
 
     }
 }
-exports.deletechambre=async(res,req)=>{
+exports.deletechambre=async(req,res)=>{
     try {
         const deletedchambre= await Chamb.findByIdAndDelete(req.params.id);
         res.send({msg:`${deletedchambre.title} deleted`})
@@ -50,7 +50,7 @@ exports.deletechambre=async(res,req)=>{
         console.log(error);
     }
 };
-exports.editchambre=async(res,req)=>{
+exports.editchambre=async(req,res)=>{
     try {
         const editedchambre = await Chamb.findByIdAndUpdate(req.params.id,{...req.body},{new:true})
         res.send(editedchambre)

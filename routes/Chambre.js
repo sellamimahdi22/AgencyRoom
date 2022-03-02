@@ -7,9 +7,9 @@ const router =express.Router();
 
 router.get('/get-chambre',getchambre);
 router.get('/get-chambre/:id',getonechambre)
-router.post('/add-chambre',verifyAuth,addchambre)
-router.delete('/delete-chambre/:id',verifyAuth,deletechambre)
-router.put('/edit-chambre/:id',verifyAuth,editchambre)
+router.post('/add-chambre',addchambre)
+router.delete('/delete-chambre/:id',deletechambre)
+router.put('/edit-chambre/:id',editchambre)
 
 
 module.exports=router

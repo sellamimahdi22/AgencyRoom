@@ -13,8 +13,10 @@ import { useEffect, useState } from 'react';
 import useForceUpdate from 'use-force-update';
 import Admin from './conponment/Adminsc/Admin';
 import Accueil from './conponment/Accueil/Accueil';
-import Addchambre from './conponment/Adminsc/Addchambre';
-import Editchamb from './conponment/Adminsc/Editchamb';
+import Addchambre from './conponment/chambres/Addchambre';
+import Editchamb from './conponment/chambres/Editchamb';
+import Details from './conponment/chambres/Details';
+import { useSelector } from 'react-redux';
 // import useForceUpdate from 'use-force-update';
 
 function App() {
@@ -36,10 +38,11 @@ function App() {
  
    
  }, [url])
- 
+ const { loading,chambres} = useSelector((state) => state.chambresreducer);
+
   
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
       {
         (fileName!== 'Profile'  )&&(fileName!=='Admin')? <Nav />
@@ -56,7 +59,9 @@ function App() {
         <Route exact path="/Admin" component={Admin} />
         <Route exact path="/register" component={Register1} />
         <Route exact path="/add" component={Addchambre} />
-        <Route exact path="/:id" component={Editchamb} />
+        <Route exact path="/Edit/:id" component={Editchamb} />
+        <Route exact path="/chambres/details/:id"  exact  render={(props)=> <Details detail={chambres}{...props}/>} />
+
       </Switch>
       </BrowserRouter>
     </div>

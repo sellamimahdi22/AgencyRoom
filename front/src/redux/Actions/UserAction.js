@@ -27,6 +27,7 @@ export const loginUser=(user)=>async(dispatch)=>{
     try {
         const res= await axios.post('/user/login',user);
         localStorage.setItem('token',res.data.token)
+        console.log(res.data)
         const {firstname,Lastname,Email,phone,country,isAdmin}=res.data
         const currentUser = {
             
@@ -35,7 +36,7 @@ export const loginUser=(user)=>async(dispatch)=>{
             Email,
             phone,
             country,
-            isAdmin
+            isAdmin,
         }
         localStorage.setItem('currentUser',JSON.stringify(currentUser))
         console.log(res)

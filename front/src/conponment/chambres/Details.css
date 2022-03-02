@@ -1,0 +1,42 @@
+
+.det{
+    /* background-color: aqua; */
+    width: 100%;
+    padding-top: 5%;
+    padding-left: 15%;
+    height: 850px;
+}
+.wrap{
+    height: 500px;
+width: 80%;
+    display: flex;
+background-color: #CAF0F8;    /* align-items: center; */
+    justify-content: center;
+padding-left:10%;
+    padding-top: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);}
+
+.inl{
+    
+
+    position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
+	height: 100%;
+	float: left;
+	width: 40%;
+
+
+}
+.price{
+    padding-top: 50%;
+}
+.desc{
+    width: 120%;
+    height: 50px;
+display: flex;
+justify-content: center;
+/* padding-top: 60%; */
+    /* background-color: black; */
+}

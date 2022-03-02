@@ -4,12 +4,12 @@
     
 }
 .rech{
-    background-image: url("");
+    background-image: url("https://images.unsplash.com/photo-1558976825-6b1b03a03719?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGhvdGVsfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-   
-
+   height: 450px;
+width: 100%;
 
 
 }
@@ -19,16 +19,28 @@
     padding-top: 15%;  
 }
 .cards{
-    width: 100%;
+    width:89%;
     padding-left: 140px;
+    /* padding-right: 80%; */
     display: flex;
     flex-wrap:  wrap;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: space-between;
+    /* text-align: center; */
+    padding-top: 5%;
+    /* height: 100%; */
 }
-.ava{
-    background-color: aqua;
-    width: 350px;
-    height: 80px;
-    display: block;
+
+.dates{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+justify-content: space;
+}
+.reechbtn{
+    display: flex;
+    justify-content: center ;
+    /* align-items: center; */
+    /* padding: 10px 30px; */
+    /* padding-left: 40%; */
+    /* padding-right: 40%; */
 }

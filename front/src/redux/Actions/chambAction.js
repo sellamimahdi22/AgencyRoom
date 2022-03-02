@@ -45,31 +45,33 @@ export const addchambre=(newchambre)=>async(dispatch)=>{
         })
     } catch (error) {
         // alert("add error")
-  console.log(error.response)      
+  console.log(error.response.data)      
         
 }}
 
 export const editchambre =(editedchambre)=>async(dispatch)=>{
     try {
-        const res = await axios.put(`/chambres/edit-chambre/:id`,editedchambre)
+        const res = await axios.put(`/chambres/edit-chambre/${editedchambre._id}`,editedchambre)
         dispatch({
             type:EDITCHAMBRES,
             payload:res.data,
         })
     } catch (error) {
         // alert("edit error")
-        // console.log(error.response.data)
+        console.log(error.response.data)
     }
 }
 
 export const deletechambre=(id)=>async(dispatch)=>{
     try {
-        const res=await axios.delete(`/delete/${id}`)
+        const res=await axios.delete(`/chambres/delete-chambre/${id}`)
         dispatch({
             type:DELETECHAMBRES,
             payload:res.data,
         })
     } catch (error) {
-        alert("delete error")
+        // alert("delete error")
+        console.log(error.response.data)
+
     }
 }
